@@ -28,17 +28,6 @@ public class SessaoController {
 	private SessaoDao sessaoDao;
 
 	@GetMapping("/admin/sessao")
-	public ModelAndView form(@RequestParam("salaId") Integer salaId) {
-
-		ModelAndView modelAndView = new ModelAndView("sessao/sessao");
-
-		modelAndView.addObject("sala", salaDao.findOne(salaId));
-		modelAndView.addObject("filmes", filmeDao.findAll());
-
-		return modelAndView;
-	}
-
-	@GetMapping("/admin/sessao")
 	public ModelAndView form(@RequestParam("salaId") Integer salaId, SessaoForm form) {
 		form.setSalaId(salaId);
 		ModelAndView modelAndView = new ModelAndView("sessao/sessao");
