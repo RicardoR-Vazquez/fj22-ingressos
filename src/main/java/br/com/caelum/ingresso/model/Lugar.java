@@ -57,6 +57,12 @@ public class Lugar {
     public void setPosicao(Integer posicao) {
         this.posicao = posicao;
     }
+    
+    @Override
+    public String toString() {
+    	
+    	return fileira + posicao;
+    }
 
     @Override
     public int hashCode() {
